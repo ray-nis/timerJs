@@ -8,10 +8,12 @@ let hour = 0;
 
 startBtn.addEventListener("click", ()=> {
     count = setInterval(timer, 1000);
+    startBtn.disabled = true;
 })
 
 stopBtn.addEventListener("click", ()=> {
     count = clearInterval(count);
+    startBtn.disabled = false;
 })
 
 function timer() {
