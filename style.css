@@ -135,3 +135,25 @@ input, select {
     background-color: #25272b;
     color: #fff;
 }
+
+.notify {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.alarm-button {
+    font-family: 'Nova Square', cursive;
+    border: none;
+    font-size: 22px;
+    padding: 5px 12px;
+    cursor: pointer;
+    color: #25272b;
+    transition: all 0.2s;
+}
+
+.alarm-button:hover {
+    background-color: #25272b;
+    color: #fff;
+}
