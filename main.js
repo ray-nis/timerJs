@@ -7,6 +7,8 @@ let sec = 0;
 let min = 0;
 let hour = 0;
 let currentCommand;
+let alarm;
+let audio = new Audio("ring.mp3");
 
 startBtn.addEventListener("click", ()=> {
     count = setInterval(timer, 1000);
@@ -39,6 +41,11 @@ function timer() {
     }
 
     showTimer();
+
+    if (getSeconds(hour, min, sec) >= alarm) {
+        audio.play();
+        stopBtn.click();
+    }
 }
 
 function showTimer() {
@@ -51,3 +58,27 @@ function show(time) {
     }
     return time;
 }
+
+function getSeconds(h, m, s) {
+    let secs = s;
+    let mins = m * 60;
+    let hours = h * 60 * 60; 
+
+    return secs + mins + hours;
+}
+
+let min1 = document.querySelector("#min1");
+let hour1 = document.querySelector("#hour1");
+let hour10 = document.querySelector("#hour10");
+
+min1.addEventListener("click", ()=> {
+    alarm = getSeconds(0, 1, 0);
+})
+
+hour1.addEventListener("click", () => {
+    alarm = getSeconds(1, 0, 0);
+})
+
+hour10.addEventListener("click", () => {
+    alarm = getSeconds(10, 0, 0);
+})
