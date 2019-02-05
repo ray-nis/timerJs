@@ -9,6 +9,8 @@ let hour = 0;
 let currentCommand;
 let alarm;
 let audio = new Audio("ring.mp3");
+let submit = document.querySelector("#submit");
+let input = document.querySelector("#input");
 
 startBtn.addEventListener("click", ()=> {
     count = setInterval(timer, 1000);
@@ -81,4 +83,12 @@ hour1.addEventListener("click", () => {
 
 hour10.addEventListener("click", () => {
     alarm = getSeconds(10, 0, 0);
+})
+
+submit.addEventListener("click", () => {
+    let inputValue = input.value;
+    console.log(inputValue);
+    alarm = getSeconds(0, inputValue, 0);
+    console.log(alarm);
+    startBtn.click();
 })
