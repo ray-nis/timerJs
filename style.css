@@ -157,3 +157,9 @@ input, select {
     background-color: #25272b;
     color: #fff;
 }
+
+#input {
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #25272b;
+    padding: 5px 2px;
+}
