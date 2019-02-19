@@ -87,8 +87,6 @@ hour10.addEventListener("click", () => {
 
 submit.addEventListener("click", () => {
     let inputValue = input.value;
-    console.log(inputValue);
     alarm = getSeconds(0, inputValue, 0);
-    console.log(alarm);
     startBtn.click();
 })
